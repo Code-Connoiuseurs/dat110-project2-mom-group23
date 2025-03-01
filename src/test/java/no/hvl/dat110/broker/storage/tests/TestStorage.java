@@ -1,17 +1,16 @@
 package no.hvl.dat110.broker.storage.tests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Set;
 
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import no.hvl.dat110.broker.ClientSession;
 import no.hvl.dat110.broker.Storage;
-import no.hvl.dat110.messages.ConnectMsg;
-import no.hvl.dat110.messages.MessageUtils;
 
 public class TestStorage {
 

@@ -58,7 +58,7 @@ public class Broker extends Stopable {
 		if (msg.getType() == MessageType.CONNECT) {
 			
 			ConnectMsg cmsg = (ConnectMsg) msg;
-			dispatcher.onConnect(cmsg, connection);
+			dispatcher.onConnect(cmsg, connection);	
 			
 		} else {
 			System.out.println("Protocol error: first message should be connect");
