@@ -9,8 +9,7 @@ public class DeleteTopicMsg extends Message {
 		super(MessageType.DELETETOPIC, user);
 		this.topic = topic;
     }
-	
-	// TODO:
+
 	// Implement object variables - a topic is required
 
 	// Complete the constructor, get/set-methods, and toString method

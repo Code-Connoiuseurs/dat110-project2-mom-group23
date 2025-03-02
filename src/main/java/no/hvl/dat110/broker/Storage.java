@@ -61,7 +61,7 @@ public class Storage {
 		clients.put(user, session);
 		
 	}
-
+	
 	public void removeClientSession(String user) {
 
 		// disconnet the client (user) 

@@ -12,7 +12,6 @@ public class PublishMsg extends Message {
 		this.message = message;
 	}
 
-	// TODO:
 	// Implement object variables - a topic and a message is required
 
 	// Complete the constructor, get/set-methods, and toString method
