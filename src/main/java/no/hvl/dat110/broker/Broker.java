@@ -17,7 +17,7 @@ public class Broker extends Stopable {
 	private MessagingServer server;
 	private Dispatcher dispatcher;
 		
-	public Broker (Dispatcher dispatcher,int port) {
+	public Broker (Dispatcher dispatcher, int port) {
 		super("Broker");
 		server = new MessagingServer(port);
 		this.dispatcher = dispatcher;
@@ -63,6 +63,12 @@ public class Broker extends Stopable {
 		} else {
 			System.out.println("Protocol error: first message should be connect");
 		}
+	}
+
+	@Override
+	public void doStop() {
+		super.doStop();
+		server.stop();
 	}
 	
 }

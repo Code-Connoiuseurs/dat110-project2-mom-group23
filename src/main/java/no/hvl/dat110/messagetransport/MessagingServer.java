@@ -1,6 +1,7 @@
 package no.hvl.dat110.messagetransport;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -11,8 +12,12 @@ public class MessagingServer {
 	public MessagingServer(int port) {
 		
 		try {
-		
-			this.welcomeSocket = new ServerSocket(port);
+			ServerSocket ss = new ServerSocket();
+			ss.setReuseAddress(true);
+			ss.bind(new InetSocketAddress(port));
+			this.welcomeSocket = ss;
+
+			// this.welcomeSocket = new ServerSocket(port);
 			
 		} catch (IOException ex) {
 			

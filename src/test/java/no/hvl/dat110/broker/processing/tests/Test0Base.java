@@ -1,9 +1,8 @@
 package no.hvl.dat110.broker.processing.tests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import no.hvl.dat110.broker.Broker;
@@ -45,10 +44,12 @@ public abstract class Test0Base {
 	public void tearDown() throws Exception {
 		
 		try {
-			Thread.sleep(10000); // let the system run for a while
-			broker.join();
+			broker.doStop();
 			dispatcher.doStop();
+			
+			broker.join();
 			dispatcher.join();
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
