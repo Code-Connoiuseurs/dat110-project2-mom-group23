@@ -158,6 +158,8 @@ public class Dispatcher extends Stopable {
 
 		Set<String> subscribers = storage.getSubscribers(msg.getTopic());
 		
+		if (subscribers == null) return;
+		
 		subscribers.forEach(s -> storage.getSession(s).send(msg));
 
 	}
